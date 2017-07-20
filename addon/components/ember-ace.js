@@ -176,7 +176,7 @@ export default Component.extend({
   _destroyEditor() {
     if (this.editor) {
       const { completer } = this.editor;
-      if (completer) {
+      if (completer && completer.popup) {
         // autocomplete doesn't clean itself up well
         completer.popup.container.remove();
         completer.popup.destroy();
